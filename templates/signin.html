@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <title>coordi2 | signin</title>
+    </head>
+    <body class="text-center">
+        <h1 class="h3 mt-2 mb-3 font-weight-normal">signin</h1>
+        <form class="w-25 mx-auto" th:action="@{/login}" method="post">{% csrf_token %} 
+           	<label for="username" class="sr-only"></label>
+           	<input class="form-control" id="username_data"
+           			type="text" name="username" placeholder="ユーザID" 
+           			required autofocus/>
+           	<label for="password" class="sr-only"></label>
+           	<input class="form-control" id="password_data"
+           			type="password" name="password" placeholder="パスワード" 
+           			required/>
+           	<input class="btn btn-outline-primary my-1" type="submit" value="Sign In"/>
+        </form>
+        <p class="mt-2 mb-3 text-muted">&copy; 2021</p>
+    </body>
+</html>
+{% endblock %}
