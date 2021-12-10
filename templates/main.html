@@ -1,1 +1,8 @@
 <h1>こんにちわ！！！</h1>
+
+
+<form name="logout" method="post" action="{% url 'logout' %}">{% csrf_token %} 
+    <label class="logoutLblPos">
+    <input name="logout" type="submit" id="submit2" value="logout">
+    </label>
+  </form>
