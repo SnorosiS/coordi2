@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 def signinview(request):
     if request.method == 'GET':
-        return render(request, 'signin.html')
+        return render(request, 'sign/signin.html')
     else:
         username_data = request.POST.get('username')
         password_data = request.POST.get('password')
@@ -18,11 +18,11 @@ def signinview(request):
             login(request, user)
             return redirect('main')
         else:
-            return render(request, 'signin.html')
+            return render(request, 'sign/signin.html')
 
 @login_required
 def mainview(request):
-    return render(request, 'main.html')
+    return render(request, 'main/main.html')
 
 def logoutview(request):
     logout(request)
